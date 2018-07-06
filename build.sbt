@@ -1,21 +1,24 @@
 
+import sbt.Keys.scalaVersion
 import uk.gov.hmrc.DefaultBuildSettings.targetJvm
 import uk.gov.hmrc.versioning.SbtGitVersioning.majorVersion
 import uk.gov.hmrc.{SbtArtifactory, SbtAutoBuildPlugin}
 
+val libName: String = "platops-example-library"
 
-enablePlugins(SbtAutoBuildPlugin, SbtGitVersioning, SbtArtifactory)
-
-name                      := "platops-example-library"
-majorVersion              := 0
-scalaVersion              := "2.11.11"
-targetJvm                 := "jvm-1.8"
-libraryDependencies       ++= compileDependencies ++ testDependencies
-
-resolvers := Seq(
-  Resolver.bintrayRepo("hmrc", "releases"),
-  Resolver.typesafeRepo("releases")
-)
+lazy val root = Project(libName, file("."))
+  .enablePlugins(SbtAutoBuildPlugin, SbtGitVersioning, SbtArtifactory)
+  .settings(
+    makePublicallyAvailableOnBintray := true,
+    majorVersion              := 0,
+    scalaVersion              := "2.11.11",
+    targetJvm                 := "jvm-1.8",
+    libraryDependencies       ++= compileDependencies ++ testDependencies,
+    resolvers := Seq(
+      Resolver.bintrayRepo("hmrc", "releases"),
+      Resolver.typesafeRepo("releases")
+    )
+  )
 
 val compileDependencies = Seq()
 
