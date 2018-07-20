@@ -1,7 +1,6 @@
 
 import sbt.Keys.scalaVersion
 import uk.gov.hmrc.DefaultBuildSettings.targetJvm
-import uk.gov.hmrc.versioning.SbtGitVersioning.majorVersion
 import uk.gov.hmrc.{SbtArtifactory, SbtAutoBuildPlugin}
 
 val libName: String = "platops-example-library"
