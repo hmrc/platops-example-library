@@ -14,11 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc
+package uk.gov.hmrc.example
 
-import uk.gov.hmrc.example.Version
+import play.api.libs.json.{JsArray, Json}
 
-object HelloWorld {
-
-  def hello() = s"hi ${Version.name}"
+object Version {
+  val name: String = (JsArray(Seq(Json.parse("""{"version":"play 2.5"}""")))(0) \ "version" ).as[String]
 }

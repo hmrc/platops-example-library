@@ -16,9 +16,15 @@
 
 package uk.gov.hmrc
 
+import org.scalatest.{Matchers, WordSpec}
 import uk.gov.hmrc.example.Version
 
-object HelloWorld {
+class HelloWorldSpec extends WordSpec with Matchers {
 
-  def hello() = s"hi ${Version.name}"
+  "HelloWorld" should {
+    "say hi" in {
+      HelloWorld.hello() shouldBe s"hi play 2.5"
+    }
+  }
+
 }
