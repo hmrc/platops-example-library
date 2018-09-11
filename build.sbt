@@ -1,9 +1,8 @@
 
 import sbt.Keys.scalaVersion
-import sbt.PlayCrossCompilation
 import uk.gov.hmrc.DefaultBuildSettings.targetJvm
-import uk.gov.hmrc.{SbtArtifactory, SbtAutoBuildPlugin}
-import sbt.PlayCrossCompilation._
+import uk.gov.hmrc.PlayCrossCompilation._
+import uk.gov.hmrc.{PlayCrossCompilation, SbtArtifactory, SbtAutoBuildPlugin}
 
 val libName: String = "platops-example-library"
 
