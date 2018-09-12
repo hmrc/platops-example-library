@@ -1,8 +1,7 @@
 
 import sbt.Keys.scalaVersion
 import uk.gov.hmrc.DefaultBuildSettings.targetJvm
-import uk.gov.hmrc.PlayCrossCompilation._
-import uk.gov.hmrc.{PlayCrossCompilation, SbtArtifactory, SbtAutoBuildPlugin}
+import uk.gov.hmrc.{Dependencies, PlayCrossCompilation, SbtArtifactory, SbtAutoBuildPlugin}
 
 val libName: String = "platops-example-library"
 
@@ -21,28 +20,17 @@ lazy val root = Project(libName, file("."))
     PlayCrossCompilation()
   )
 
-val compileDependencies = {
-
-  val play25Dependencies = Seq(
-    "com.typesafe.play" %% "play-json"            % "2.5.12"
+val compileDependencies = Dependencies(
+  play25 =Seq(
+    "com.typesafe.play" %% "play-json" % "2.5.12"
+  ),
+  play26 = Seq(
+    "com.typesafe.play" %% "play-json" % "2.6.8"
   )
-
-  val play26Dependencies = Seq(
-    "com.typesafe.play" %% "play-json"            % "2.6.8"
-  )
-
-  Seq(
-    "org.scalatest" %% "scalatest" % "3.0.5",
-    "org.pegdown"   % "pegdown"    % "1.6.0"
-  ) ++ (
-    if (playVersion == Play25) play25Dependencies else play26Dependencies
-    )
-
-}
-
+)
 
 val testDependencies = Seq(
-  "org.scalatest"          %% "scalatest"          % "3.0.3"             % "test",
-  "org.mockito"            % "mockito-all"         % "1.9.5"             % "test",
-  "org.pegdown"            %  "pegdown"            % "1.6.0"              % "test"
+  "org.scalatest"  %% "scalatest"  % "3.0.3" % Test,
+  "org.mockito"    % "mockito-all" % "1.9.5" % Test,
+  "org.pegdown"    %  "pegdown"    % "1.6.0" % Test
 )
