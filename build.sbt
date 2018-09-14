@@ -1,7 +1,7 @@
 
 import sbt.Keys.scalaVersion
 import uk.gov.hmrc.DefaultBuildSettings.targetJvm
-import uk.gov.hmrc.{Dependencies, PlayCrossCompilation, SbtArtifactory, SbtAutoBuildPlugin}
+import uk.gov.hmrc.{crossPlayDependencies, PlayCrossCompilation, SbtArtifactory, SbtAutoBuildPlugin}
 
 val libName: String = "platops-example-library"
 
@@ -20,7 +20,7 @@ lazy val root = Project(libName, file("."))
     PlayCrossCompilation()
   )
 
-val compileDependencies = Dependencies(
+val compileDependencies = crossPlayDependencies(
   play25 =Seq(
     "com.typesafe.play" %% "play-json" % "2.5.12"
   ),
