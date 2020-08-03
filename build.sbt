@@ -1,6 +1,5 @@
 import PlayCrossCompilation._
 import sbt.Keys.scalaVersion
-import uk.gov.hmrc.DefaultBuildSettings.targetJvm
 import uk.gov.hmrc.{SbtArtifactory, SbtAutoBuildPlugin}
 
 val libName: String = "platops-example-library"
@@ -10,14 +9,13 @@ lazy val root = Project(libName, file("."))
   .settings(
     makePublicallyAvailableOnBintray := true,
     majorVersion              := 0,
+    playCrossCompilationSettings,
     scalaVersion              := "2.11.11",
-    targetJvm                 := "jvm-1.8",
     libraryDependencies       ++= compileDependencies ++ testDependencies,
     resolvers := Seq(
-      Resolver.bintrayRepo("hmrc", "releases"),
-      Resolver.typesafeRepo("releases")
-    ),
-    playCrossCompilationSettings
+        Resolver.bintrayRepo("hmrc", "releases"),
+        Resolver.typesafeRepo("releases")
+    )
   )
 
 val compileDependencies = dependencies(
