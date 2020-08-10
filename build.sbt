@@ -10,7 +10,7 @@ lazy val root = Project(libName, file("."))
     makePublicallyAvailableOnBintray := true,
     majorVersion              := 0,
     playCrossCompilationSettings,
-    scalaVersion              := "2.11.11",
+    scalaVersion              := "2.11.12",
     libraryDependencies       ++= compileDependencies ++ testDependencies,
     resolvers := Seq(
         Resolver.bintrayRepo("hmrc", "releases"),
@@ -19,12 +19,12 @@ lazy val root = Project(libName, file("."))
   )
 
 val compileDependencies = dependencies(
-  play25 = Seq("com.typesafe.play" %% "play-json" % "2.5.12"),
+  play25 = Seq("com.typesafe.play" %% "play-json" % "2.5.19"),
   play26 = Seq("com.typesafe.play" %% "play-json" % "2.6.8")
 )
 
 val testDependencies = Seq(
-  "org.scalatest"  %% "scalatest"  % "3.0.3" % Test,
-  "org.mockito"    % "mockito-all" % "1.9.5" % Test,
+  "org.scalatest"  %% "scalatest"  % "3.0.8" % Test,
+  "org.mockito"    % "mockito-all" % "1.10.19" % Test,
   "org.pegdown"    %  "pegdown"    % "1.6.0" % Test
 )
