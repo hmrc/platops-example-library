@@ -10,7 +10,7 @@ lazy val root = Project(libName, file("."))
     makePublicallyAvailableOnBintray := true,
     majorVersion              := 0,
     playCrossCompilationSettings,
-    scalaVersion              := "2.11.12",
+    scalaVersion              := "2.12.12",
     libraryDependencies       ++= compileDependencies ++ testDependencies,
     resolvers := Seq(
         Resolver.bintrayRepo("hmrc", "releases"),
