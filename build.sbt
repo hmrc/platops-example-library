@@ -4,9 +4,17 @@ import uk.gov.hmrc.{SbtArtifactory, SbtAutoBuildPlugin}
 
 val libName: String = "platops-example-library"
 
+def updateVersion(v: String): String =
+  if (v.endsWith("-SNAPSHOT")) {
+    v.stripSuffix("-SNAPSHOT") + "-RC1-SNAPSHOT"
+  } else {
+    v + "-RC1"
+  }
+
 lazy val root = Project(libName, file("."))
   .enablePlugins(SbtAutoBuildPlugin, SbtGitVersioning, SbtArtifactory)
   .settings(
+    version ~= updateVersion,
     makePublicallyAvailableOnBintray := true,
     majorVersion              := 0,
     playCrossCompilationSettings,
