@@ -19,8 +19,8 @@ lazy val root = Project(libName, file("."))
   )
 
 val compileDependencies = dependencies(
-  play25 = Seq("com.typesafe.play" %% "play-json" % "2.5.19"),
-  play26 = Seq("com.typesafe.play" %% "play-json" % "2.6.8")
+  play26 = Seq("com.typesafe.play" %% "play-json" % "2.6.8"),
+  play27 = Seq("com.typesafe.play" %% "play-json" % "2.7.4")
 )
 
 val testDependencies = Seq(
