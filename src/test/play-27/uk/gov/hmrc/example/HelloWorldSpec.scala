@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 HM Revenue & Customs
+ * Copyright 2021 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,10 +14,16 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.example
+package uk.gov.hmrc
 
-import play.api.libs.json.{JsArray, Json}
+import org.scalatest.{Matchers, WordSpec}
 
-object Version {
-  val name: String = (JsArray(Seq(Json.parse("""{"version":"play 2.5"}""")))(0) \ "version" ).as[String]
+class HelloWorldSpec extends WordSpec with Matchers {
+
+  "HelloWorld" should {
+    "say hi" in {
+      HelloWorld.hello() shouldBe "hi play 2.7"
+    }
+  }
+
 }
