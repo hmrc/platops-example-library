@@ -14,17 +14,10 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc
+package uk.gov.hmrc.example
 
-import org.scalatest.matchers.should.Matchers
-import org.scalatest.wordspec.AnyWordSpec
+import play.api.libs.json.{JsArray, Json}
 
-class HelloWorldSpec extends AnyWordSpec with Matchers {
-
-  "HelloWorld" should {
-    "say hi" in {
-      HelloWorld.hello() shouldBe "hi play 2.6"
-    }
-  }
-
+object Version {
+  val name: String = (JsArray(Seq(Json.parse("""{"version":"play 2.8"}"""))) \ 0 \ "version" ).as[String]
 }

@@ -16,9 +16,10 @@
 
 package uk.gov.hmrc
 
-import org.scalatest.{Matchers, WordSpec}
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.wordspec.AnyWordSpec
 
-class HelloWorldSpec extends WordSpec with Matchers {
+class HelloWorldSpec extends AnyWordSpec with Matchers {
 
   "HelloWorld" should {
     "say hi" in {
