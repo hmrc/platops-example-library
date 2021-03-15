@@ -23,7 +23,7 @@ class HelloWorldSpec extends AnyWordSpec with Matchers {
 
   "HelloWorld" should {
     "say hi" in {
-      HelloWorld.hello() shouldBe "hi play 2.6"
+      HelloWorld.hello() shouldBe "hi play 2.8"
     }
   }
 
