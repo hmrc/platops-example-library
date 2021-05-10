@@ -1,11 +1,8 @@
 import PlayCrossCompilation._
-import sbt.Keys.scalaVersion
-import uk.gov.hmrc.{SbtArtifactory, SbtAutoBuildPlugin}
 
 lazy val root = Project("platops-example-library", file("."))
-  .enablePlugins(SbtAutoBuildPlugin, SbtGitVersioning)
   .settings(
-    makePublicallyAvailableOnBintray := true,
+    isPublicArtefact          := true,
     majorVersion              := 0,
     playCrossCompilationSettings,
     scalaVersion              := "2.12.13",
