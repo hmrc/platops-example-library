@@ -1,7 +1,7 @@
 lazy val library = (project in file("."))
   .settings(
     commonSettings,
-    publish / skip := true,
+    publish / skip := true
   )
   .aggregate(
     play26,
@@ -37,7 +37,7 @@ val testDependencies = Seq(
 
 lazy val commonSettings = Seq(
   majorVersion     := 0,
-  scalaVersion     := "2.12.13",
+  scalaVersion     := "2.12.14",
   isPublicArtefact := true
 )
 
