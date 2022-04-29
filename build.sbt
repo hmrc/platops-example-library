@@ -12,21 +12,21 @@ lazy val library = (project in file("."))
 lazy val play26 = Project("platops-example-library-play-26", file("play-26"))
   .settings(
     commonSettings,
-    libraryDependencies ++= Seq("com.typesafe.play" %% "play-json" % "2.6.8") ++ testDependencies,
+    libraryDependencies ++= Seq("com.typesafe.play" %% "play-json" % "2.9.2") ++ testDependencies,
     sharedSources
   )
 
 lazy val play27 = Project("platops-example-library-play-27", file("play-27"))
   .settings(
     commonSettings,
-    libraryDependencies ++= Seq("com.typesafe.play" %% "play-json" % "2.7.4") ++ testDependencies,
+    libraryDependencies ++= Seq("com.typesafe.play" %% "play-json" % "2.9.2") ++ testDependencies,
     sharedSources
   )
 
 lazy val play28 = Project("platops-example-library-play-28", file("play-28"))
   .settings(
     commonSettings,
-    libraryDependencies ++= Seq("com.typesafe.play" %% "play-json" % "2.8.1") ++ testDependencies,
+    libraryDependencies ++= Seq("com.typesafe.play" %% "play-json" % "2.9.2") ++ testDependencies,
     sharedSources
   )
 
