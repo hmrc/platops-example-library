@@ -31,7 +31,7 @@ lazy val play28 = Project("platops-example-library-play-28", file("play-28"))
   )
 
 val testDependencies = Seq(
-  "org.scalatest"        %% "scalatest"    % "3.2.7"   % Test,
+  "org.scalatest"        %% "scalatest"    % "3.2.6"   % Test,
   "com.vladsch.flexmark" %  "flexmark-all" % "0.35.10" % Test
 )
 
