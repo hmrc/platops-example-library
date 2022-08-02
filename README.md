@@ -5,3 +5,4 @@
 
 This is an example minimal library with a support for cross-compilation for Play 2.5 and 2.6.
 
+TEST
