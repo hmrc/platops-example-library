@@ -1,26 +1,13 @@
+val scala2_12 = "2.12.17"
+val scala2_13 = "2.13.10"
+
 lazy val library = (project in file("."))
   .settings(
     commonSettings,
     publish / skip := true,
   )
   .aggregate(
-    play26,
-    play27,
     play28
-  )
-
-lazy val play26 = Project("platops-example-library-play-26", file("play-26"))
-  .settings(
-    commonSettings,
-    libraryDependencies ++= Seq("com.typesafe.play" %% "play-json" % "2.9.2") ++ testDependencies,
-    sharedSources
-  )
-
-lazy val play27 = Project("platops-example-library-play-27", file("play-27"))
-  .settings(
-    commonSettings,
-    libraryDependencies ++= Seq("com.typesafe.play" %% "play-json" % "2.9.2") ++ testDependencies,
-    sharedSources
   )
 
 lazy val play28 = Project("platops-example-library-play-28", file("play-28"))
@@ -36,9 +23,10 @@ val testDependencies = Seq(
 )
 
 lazy val commonSettings = Seq(
-  majorVersion     := 0,
-  scalaVersion     := "2.12.13",
-  isPublicArtefact := true
+  majorVersion       := 0,
+  scalaVersion       := scala2_12,
+  crossScalaVersions := Seq(scala2_12, scala2_13),
+  isPublicArtefact   := true
 )
 
 def sharedSources = Seq(
