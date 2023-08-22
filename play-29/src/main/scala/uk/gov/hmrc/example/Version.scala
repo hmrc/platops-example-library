@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc
+package uk.gov.hmrc.example
 
-import uk.gov.hmrc.example.Version
+import play.api.libs.typedmap._
 
-object HelloWorld {
-
-  def hello() = s"hi ${Version.attributes.get[String](Version.key).getOrElse("")}"
+object Version {
+  val key = TypedKey[String]("version")
+  val attributes = TypedMap.empty.updated(TypedEntry[String](key, "play 2.9"))
 }
