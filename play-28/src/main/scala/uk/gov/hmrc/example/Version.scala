@@ -16,8 +16,9 @@
 
 package uk.gov.hmrc.example
 
-import play.api.libs.json.{JsArray, Json}
+import play.api.libs.typedmap._
 
 object Version {
-  val name: String = (JsArray(Seq(Json.parse("""{"version":"play 2.8"}"""))) \ 0 \ "version" ).as[String]
+  val key = TypedKey[String]("version")
+  val attributes = TypedMap.empty + TypedEntry[String](key, "play 2.8")
 }
