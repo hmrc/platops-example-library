@@ -2,15 +2,19 @@ import sbt._
 
 object LibDependencies {
   val play28 = Seq(
-    "com.typesafe.play" %% "play" % "2.8.20"
+    "com.typesafe.play" %% "play" % "2.8.21"
   )
 
   val play29 = Seq(
-    "com.typesafe.play" %% s"play" % "2.9.0-M7"
+    "com.typesafe.play" %% s"play" % "2.9.0"
+  )
+
+  val play30 = Seq(
+    "org.playframework" %% s"play" % "3.0.0"
   )
 
   val test = Seq(
-    "org.scalatest"        %% "scalatest"    % "3.2.15" % Test,
-    "com.vladsch.flexmark" %  "flexmark-all" % "0.62.2" % Test
+    "org.scalatest"        %% "scalatest"    % "3.2.17" % Test,
+    "com.vladsch.flexmark" %  "flexmark-all" % "0.64.8" % Test
   )
 }
