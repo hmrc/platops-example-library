@@ -8,16 +8,8 @@ ThisBuild / isPublicArtefact   := true
 lazy val library = (project in file("."))
   .settings(publish / skip := true)
   .aggregate(
-    play28,
     play29,
     play30
-  )
-
-lazy val play28 = Project("platops-example-library-play-28", file("play-28"))
-  .settings(
-    crossScalaVersions := Seq(scala2_12, scala2_13),
-    libraryDependencies ++= LibDependencies.play28 ++ LibDependencies.test,
-    sharedSources
   )
 
 lazy val play29 = Project("platops-example-library-play-29", file("play-29"))
