@@ -1,8 +1,8 @@
-val scala2_12 = "2.12.18"
 val scala2_13 = "2.13.12"
+val scala3    = "3.3.3"
 
 ThisBuild / scalaVersion       := scala2_13
-ThisBuild / majorVersion       := 0
+ThisBuild / majorVersion       := 1
 ThisBuild / isPublicArtefact   := true
 
 lazy val library = (project in file("."))
@@ -20,6 +20,7 @@ lazy val play29 = Project("platops-example-library-play-29", file("play-29"))
 
 lazy val play30 = Project("platops-example-library-play-30", file("play-30"))
   .settings(
+    crossScalaVersions := Seq(scala2_13, scala3),
     libraryDependencies ++= LibDependencies.play30 ++ LibDependencies.test,
     sharedSources
   )

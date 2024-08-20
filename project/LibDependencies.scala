@@ -6,7 +6,7 @@ object LibDependencies {
   )
 
   val play30 = Seq(
-    "org.playframework" %% s"play" % "3.0.0"
+    "org.playframework" %% s"play" % "3.0.5"
   )
 
   val test = Seq(
