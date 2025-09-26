@@ -7,16 +7,7 @@ ThisBuild / isPublicArtefact   := true
 
 lazy val library = (project in file("."))
   .settings(publish / skip := true)
-  .aggregate(
-    play29,
-    play30
-  )
-
-lazy val play29 = Project("platops-example-library-play-29", file("play-29"))
-  .settings(
-    libraryDependencies ++= LibDependencies.play29 ++ LibDependencies.test,
-    sharedSources
-  )
+  .aggregate(play30)
 
 lazy val play30 = Project("platops-example-library-play-30", file("play-30"))
   .settings(
