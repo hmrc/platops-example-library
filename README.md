@@ -1,4 +1,3 @@
-
 # platops-example-library
 
 ![](https://img.shields.io/github/v/release/hmrc/platops-example-library)
